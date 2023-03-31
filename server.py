@@ -27,7 +27,7 @@ with open('server.pid', 'w') as f:
     f.write(str(pid))
 
 
-@app.route("/api/gen_key", methods=["POST"])
+@app.route("/api/gen_key", methods=["POST", "GET"])
 def gen_key():
     req = request.get_json()
     print(req)

@@ -1,5 +1,5 @@
 ### Test key generation
-POST http://localhost:6929/api/gen_key HTTP/1.1
+POST https://skynet-server.onrender.com/api/gen_key HTTP/1.1
 content-type: application/json
 
 {
