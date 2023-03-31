@@ -1,0 +1,37 @@
+### Test key generation
+POST http://localhost:6929/api/gen_key HTTP/1.1
+content-type: application/json
+
+{
+    "auth":"PASSKEY",
+    "name":"LicenseName"
+}
+
+### Test server
+GET https://skynetserver.pythonanywhere.com/ HTTP/1.1
+
+### Test validation key
+GET http://localhost:6929/api/validate_key HTTP/1.1
+content-type: application/json
+
+{
+    "key":"C13C3B-B30C7A-FA838B-7EF36F-3BB7CF-V3"
+}
+
+### Test response generation
+GET http://localhost:6929/api/generate_response HTTP/1.1
+content-type: application/json
+
+{
+    "key":"C13C3B-B30C7A-FA838B-7EF36F-3BB7CF-V3",
+    "text":"Hello World",
+    "pastMessages": [
+        {
+            "role":"system",
+            "content":"You are skynet chatbot currently in development mode."
+        }, {
+            "role":"user",
+            "content":"Hello World"
+        }
+    ]
+}
